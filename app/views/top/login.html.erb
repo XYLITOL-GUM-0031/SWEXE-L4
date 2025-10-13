@@ -1,7 +1,18 @@
-<%= form_with url: '/top/login', method: :post, local: true do |f| %>
-    <%= f.label :uid, 'ユーザーID' %>
+<h2>ログイン</h2>
+
+<%= form_with url: top_login_path, method: :post, local: true do |f| %>
+  <p>
+    <%= f.label :uid, "ユーザーID" %><br>
     <%= f.text_field :uid %>
-    <%= f.label :pass, 'パスワード' %>
+  </p>
+
+  <p>
+    <%= f.label :pass, "パスワード" %><br>
     <%= f.password_field :pass %>
-    <%= f.submit '登録' %>
+  </p>
+
+  <%= f.submit "ログイン", class: "btn btn-primary" %>
 <% end %>
+
+<br><br>
+<%= link_to "新規登録はこちら", new_user_path, class: "btn btn-outline-success" %>

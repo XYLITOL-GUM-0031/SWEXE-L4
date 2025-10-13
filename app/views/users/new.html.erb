@@ -1,0 +1,19 @@
+<h2>ユーザ登録</h2>
+
+<%= form_with model: @user, url: users_path, method: :post, local: true do |f| %>
+  <p>
+    <%= f.label :uid, "ユーザID：" %><br>
+    <%= f.text_field :uid %>
+  </p>
+
+  <p>
+    <%= f.label :password, "パスワード：" %><br>
+    <%= f.password_field :password %>
+  </p>
+
+  <%= f.submit "登録", class: "btn btn-primary" %>
+<% end %>
+
+<br><br>
+
+<%= link_to "ログインページに戻る", top_main_path, class: "btn btn-outline-secondary" %>
